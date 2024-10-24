@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html  lang="nl">
+
+<head>
+<meta name="protocol-title" content="Procedure om MAS-data te downloaden via de Sovon WFS-server" />
+<meta name="protocol-subtitle" content="" />
+<meta name="protocol-code" content="sop-039-nl" />
+<meta name="protocol-version" content="2024.07" />
+<meta name="protocol-language" content="nl" />
+<meta name="protocol-theme" content="" />
+<meta name="protocol-reviewer" content="Eves Down, Maria-Rose, Cartuyvels, Emma" />
+<meta name="protocol-file-manager" content="Langeraert, Ward" />
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Procedure om MAS-data te downloaden via de Sovon WFS-server</title>
+  <meta name="description" content="Procedure om MAS-data te downloaden via de Sovon WFS-server">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Procedure om MAS-data te downloaden via de Sovon WFS-server" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://inbo.github.io/protocols/" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Procedure om MAS-data te downloaden via de Sovon WFS-server" />
+  
+  
+  
+
+
+
+<meta name="date" content="2024-09-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="css/inbo_rapport.css" type="text/css"/>
+
+<link rel="stylesheet" href="css/inbo_rapport.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://www.vlaanderen.be/inbo/home/"><img src="css/img/inbo-nl.jpg"></a></li>
+<li class="toc-logo"><a href="https://inbo.github.io/protocols/"><button class="btn"><i class="fa fa-home"></i> Protocols homepage</button></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#metadata"><i class="fa fa-check"></i>Metadata</a></li>
+<li class="chapter" data-level="1" data-path=""><a href="#wijzigingen-t.o.v.-vorige-versies"><i class="fa fa-check"></i><b>1</b> Wijzigingen t.o.v. vorige versies</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#section"><i class="fa fa-check"></i><b>1.1</b> 2024.07</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path=""><a href="#afhankelijkheden"><i class="fa fa-check"></i><b>2</b> Afhankelijkheden</a></li>
+<li class="chapter" data-level="3" data-path=""><a href="#onderwerp"><i class="fa fa-check"></i><b>3</b> Onderwerp</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path=""><a href="#doelstelling"><i class="fa fa-check"></i><b>3.1</b> Doelstelling</a></li>
+<li class="chapter" data-level="3.2" data-path=""><a href="#toepassingsgebied"><i class="fa fa-check"></i><b>3.2</b> Toepassingsgebied</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path=""><a href="#definities-en-afkortingen"><i class="fa fa-check"></i><b>4</b> Definities en afkortingen</a></li>
+<li class="chapter" data-level="5" data-path=""><a href="#vereiste-competenties-en-opleidingen"><i class="fa fa-check"></i><b>5</b> Vereiste competenties en opleidingen</a></li>
+<li class="chapter" data-level="6" data-path=""><a href="#proces"><i class="fa fa-check"></i><b>6</b> Proces</a></li>
+<li class="chapter" data-level="7" data-path=""><a href="#werkwijze"><i class="fa fa-check"></i><b>7</b> Werkwijze</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path=""><a href="#downloaden-van-de-data-van-de-sovon-wfs-server"><i class="fa fa-check"></i><b>7.1</b> Downloaden van de data van de Sovon WFS-server</a></li>
+<li class="chapter" data-level="7.2" data-path=""><a href="#exporteren-en-lokalisatie-van-de-data"><i class="fa fa-check"></i><b>7.2</b> Exporteren en lokalisatie van de data</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path=""><a href="#veiligheid"><i class="fa fa-check"></i><b>8</b> Veiligheid</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#referenties"><i class="fa fa-check"></i>Referenties</a></li>
+<li class="appendix"><span><b>Bijlagen</b></span></li>
+<li class="divider"></li>
+<li class="cc"><a href="http://creativecommons.org/licenses/by/4.0/"><img src="css/img/cc-by.png"></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Procedure om MAS-data te downloaden via de Sovon WFS-server</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+  <h1 class="title">Procedure om MAS-data te downloaden via de Sovon WFS-server</h1>
+              <h3 class="author">Langeraert, Ward
+              <a href="https://orcid.org/0000-0002-5900-8109">
+        <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" />
+        0000-0002-5900-8109
+        </a>
+            </h3>
+                                    <h3 class="author">Van Calster, Hans
+              <a href="https://orcid.org/0000-0001-8595-8426">
+        <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" />
+        0000-0001-8595-8426
+        </a>
+            </h3>
+                              <p class="date"><em>2024-09-02</em></p>
+      </div>
+<!--
+Instructies bij opmaak van het protocol:
+
+Hieronder vind je de verschillende onderdelen van een protocol.
+In de bijhorende losse `Rmd` bestanden vind je een beschrijving wat er bij elk onderdeel vermeld moet worden.
+Het is in die bestanden dat je moet editeren.
+Niet alle onderdelen zijn altijd van toepassing.
+Laat in die gevallen de titels staan en vermeld expliciet "niet van toepassing".
+-->
+<div id="metadata" class="section level1 unnumbered hasAnchor">
+<h1>Metadata<a href="#metadata" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<table style="width:100%;">
+<colgroup>
+<col width="30%" />
+<col width="24%" />
+<col width="18%" />
+<col width="18%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">reviewers</th>
+<th align="left">documentbeheerder</th>
+<th align="left">protocolcode</th>
+<th align="left">versienummer</th>
+<th align="left">taal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Eves Down, Maria-Rose,
+Cartuyvels, Emma</td>
+<td align="left">Langeraert, Ward</td>
+<td align="left">sop-039-nl</td>
+<td align="left">2024.07</td>
+<td align="left">nl</td>
+</tr>
+</tbody>
+</table>
+<p>Controleer <a href="../standard-operating-procedures-sop.html" target="_blank">deze tabel</a> om te zien of een meer recente versie beschikbaar is.</p>
+
+</div>
+<div id="wijzigingen-t.o.v.-vorige-versies" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Wijzigingen t.o.v. vorige versies<a href="#wijzigingen-t.o.v.-vorige-versies" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="section" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> <a href="../2024.07/index.html">2024.07</a><a href="#section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Eerste versie van het protocol. Dit protocol werd eerder in een R Markdown rapport bijgehouden in de code repositories van het MAS pilootproject <span class="citation">(Langeraert &amp; Van Calster, 2024)</span> en het MBAG MAS project <span class="citation">(Langeraert <em>et al.</em>, 2024)</span>. Deze versie toont geen inhoudelijke verschillen, maar slechts enkele verschillen om de beschrijving nog meer te verduidelijken.</li>
+</ul>
+<!--
+Omschrijf hier welke wijzigingen er gebeurd zijn ten opzichte van de vorige versie. 
+Vermeld bij elk versienummer, de reden van de wijziging en - wanneer relevant - een beknopte beschrijving van de wijziging.
+Gesorteerd van recent naar oud. 
+
+## [2020.02](../2020.02/index.html)
+
+- Toevoeging van ontbrekende stap in het stappenplan
+- Verbetering van schrijffouten
+
+## [2020.01](../2020.01/index.html)
+
+- Eerste versie van het protocol
+-->
+
+</div>
+</div>
+<div id="afhankelijkheden" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Afhankelijkheden<a href="#afhankelijkheden" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Hier niets invullen.
+Indien er afhankelijkheden zijn deze invullen in de yaml sectie van `index.Rmd`
+-->
+<table style="width:93%;">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="12%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Protocolcode</th>
+<th align="left">Versienummer</th>
+<th align="left">params</th>
+<th align="left">Opgenomen als subprotocol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div id="onderwerp" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Onderwerp<a href="#onderwerp" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="doelstelling" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Doelstelling<a href="#doelstelling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Deze procedure beschrijft het stappenplan om MAS-data te downloaden via de WFS-server van Sovon en deze data te exporteren voor verdere analyse.
+Dit wordt uitgevoerd via een specifieke workflow in QGIS.</p>
+</div>
+<div id="toepassingsgebied" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Toepassingsgebied<a href="#toepassingsgebied" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De procedure kan toegepast worden door mensen die een account aanmaken en rechten aanvragen bij Sovon.</p>
+<!--
+Doelstelling en toepassingsgebied
+Doelstelling: omschrijving in woorden waarvoor het protocol dient.
+Voorbeelden wat er met de gegevens kan gedaan worden.
+Probeer de doelstelling zo veel mogelijk generiek te beschrijven en vermijd projectspecifieke doelstellingen.
+Toepassingsgebied: bespreek hier onder welke condities het protocol kan gebruikt worden.
+-->
+
+</div>
+</div>
+<div id="definities-en-afkortingen" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Definities en afkortingen<a href="#definities-en-afkortingen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Avimap:</strong> Avimap is een digitale tool ontwikkeld door SOVON voor het uitvoeren van territoriumkartering van broedvogels in het veld.</p>
+<p><strong>code repository</strong>: Een code repository is een digitale opslagplaats waar de broncode van softwareprojecten wordt beheerd en opgeslagen, vaak met versiebeheer om wijzigingen bij te houden.
+Het stelt ontwikkelaars in staat om samen te werken, wijzigingen te volgen en terug te keren naar eerdere versies van de code.</p>
+<p><strong>CRS:</strong> Een CRS, of Coordinate Reference System, is een systeem dat wordt gebruikt om geografische locaties op de aarde te definiëren.
+Een CRS beschrijft hoe tweedimensionale of driedimensionale ruimtelijke gegevens worden gepositioneerd, en hoe ze worden geprojecteerd op een plat vlak.
+Amersfoort/RD New (EPSG:28992) is een voorbeeld van een lokale CRS, specifiek voor Nederland, dat gebruikmaakt van een projectie die is geoptimaliseerd voor het Nederlandse grondgebied.</p>
+<p><strong>MAS:</strong> Het MAS, of Meetnet Agrarische Soorten, monitort broedvogels (en zoogdieren) in agrarische gebieden om trends in aantallen en verspreiding vast te stellen, en de effectiviteit van beschermingsmaatregelen te evalueren <span class="citation">(<span>‘<span>Meetnet Agrarische Soorten (MAS)</span>’</span>, s.d.)</span>.
+Dit meetnet wordt reeds toegepast in Nederland en sinds de opstart van het MBAG project ook in Vlaanderen.</p>
+<p><strong>MBAG:</strong> Het MBAG project, of Meetnet Biodiversiteit in het Agrarisch Gebied, is een initiatief van het Instituut voor Natuur- en Bosonderzoek (INBO) in Vlaanderen dat gericht is op het monitoren en analyseren van de biodiversiteit in landbouwgebieden.
+Het project richt zich op het verkrijgen van inzicht in de biodiversiteit, met een focus op akkervogels, bestuivers, bodembiodiversiteit, en landschapselementen, om zo bij te dragen aan zowel natuurbehoud als duurzame landbouwpraktijken <span class="citation">(<span>‘<span>Meetnet Biodiversiteit in het Agrarisch Gebied (MBAG)</span>’</span>, s.d.)</span>.</p>
+<p><strong>QGIS:</strong> QGIS is een open-source geografisch informatiesysteem waarin je geografische gegevens kan importeren, bekijken, bewerken, analyseren en visualiseren <span class="citation">(QGIS Development Team, 2024)</span>.</p>
+<p><strong>query:</strong> Een query is een gestructureerd verzoek om informatie uit een database of dataset te verkrijgen, vaak gebruikmakend van de SQL-programmeertaal.</p>
+<p><strong>Sovon:</strong> Sovon, voluit Sovon Vogelonderzoek Nederland, coördineert landelijke vogelmonitoring en -onderzoek, met als doel de aantallen en verspreiding van vogels in Nederland te bepalen, de trends te verklaren, en de resultaten beschikbaar te maken voor natuurbeleid, beheer, en maatschappelijke doeleinden.</p>
+<p><strong>WFS:</strong> Een WFS, of Web Feature Service, is een webstandaard om geografische data via het internet op te vragen en te manipuleren.</p>
+<!--
+Definities van begrippen en afkortingen die noodzakelijk zijn om dit document te begrijpen en het protocol op een gepaste manier te kunnen uitvoeren.
+-->
+
+</div>
+<div id="vereiste-competenties-en-opleidingen" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Vereiste competenties en opleidingen<a href="#vereiste-competenties-en-opleidingen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Niet van toepassing.</p>
+<!--
+Omschrijving van de basiskennis en vaardigheden, die de gebruiker van het protocol moet hebben om het protocol op een gepaste manier te kunnen uitvoeren.
+Eventueel kan er verwezen worden naar bepaalde opleidingen.
+-->
+
+</div>
+<div id="proces" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Proces<a href="#proces" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Het proces bestaat uit twee stappen die in het volgende hoofdstuk worden beschreven.</p>
+<p><img src="media/download_mas_wfs_proces.svg" width="100%" /></p>
+<!-- schematische voorstelling van het proces
+gebruik bijvoorbeeld `draw.io` en exporteer als png
+of maak het schema met een R package zoals `visNetwork`
+-->
+
+</div>
+<div id="werkwijze" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Werkwijze<a href="#werkwijze" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Gedetailleerde omschrijving van alle stappen die doorlopen moeten worden om het protocol uit te voeren.
+Deze stappen staan schematisch weergegeven in het processchema.
+Subtitels gebruiken om elke stap te omschrijven.
+-->
+<div id="downloaden-van-de-data-van-de-sovon-wfs-server" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Downloaden van de data van de Sovon WFS-server<a href="#downloaden-van-de-data-van-de-sovon-wfs-server" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De MAS-data worden geïmporteerd van de Sovon WFS-server via QGIS <span class="citation">(QGIS Development Team, 2024)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Een account aanmaken via <a href="https://www.vogelatlas.be/user/newuser" class="uri">https://www.vogelatlas.be/user/newuser</a></p>
+<ol style="list-style-type: decimal">
+<li>Rechten aanvragen via Sovon voor gebruik van de WFS</li>
+</ol></li>
+<li><p>Open QGIS</p>
+<ol style="list-style-type: decimal">
+<li>Zet project CRS op EPSG:28992</li>
+<li>Kies ‘Kaartlagen’ <span class="math inline">\(\rightarrow\)</span> ‘Databronnen beheren’ <span class="math inline">\(\rightarrow\)</span> ‘WFS / OGC API - Objecten’</li>
+</ol></li>
+<li><p>Klik ‘Nieuw’ bovenaan in het dialoogvenster om een nieuwe WFS-verbinding te maken</p>
+<ol style="list-style-type: decimal">
+<li>Gebruik als ‘naam’ <code>sovon</code> en als ‘url’ <code>https://portal.sovon.nl/views/wfs/453/</code></li>
+<li>Klik op ‘OK’</li>
+</ol></li>
+<li><p>Maak een verbinding met de zopas toegevoegde WFS</p>
+<ol style="list-style-type: decimal">
+<li>Klik op ‘Verbinden’ bovenaan in het dialoogvenster</li>
+<li>Geef je gebruikersnaam en paswoord in wanneer dit wordt gevraagd en klik op ‘OK’</li>
+<li>Selecteer de laag ‘ms:viewpoints’
+<ul>
+<li>Maak eventueel een specifieke SQL-query aan via ‘Query maken’ onderaan in het dialoogvenster</li>
+<li>Bijvoorbeeld voor de data 2024: <code>SELECT * FROM viewpoints WHERE jaar = 2024</code></li>
+</ul></li>
+<li>Vink het boxje aan ‘Alleen objecten bevragen die het huidige zichtbare bereik overlappen’</li>
+<li>Wijzig het Coördinaten Referentiesysteem naar EPSG:28992</li>
+<li>Klik op ‘Toevoegen’ onderaan in het dialoogvenster
+<ul>
+<li>Indien QGIS vraagt de toe te voegen items te selecteren, selecteer je de laag ‘ms:viewpoints’ en klik je op ‘Lagen toevoegen’</li>
+</ul></li>
+</ol></li>
+</ol>
+<p>Nu worden alle data waar je toegang toe hebt gedownload (dit kan even duren).
+Dit zijn de waarnemingen van de MAS-tellingen in Vlaanderen.</p>
+</div>
+<div id="exporteren-en-lokalisatie-van-de-data" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Exporteren en lokalisatie van de data<a href="#exporteren-en-lokalisatie-van-de-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Wanneer alle data gedownload zijn, kan je deze laag exporteren.
+Verdere opschoning en preparatie van de data gebeuren in de code repository “mbag-mas” <span class="citation">(Langeraert <em>et al.</em>, 2024)</span>.
+De volgende stappen beschrijven dan ook de lokalisatie van de data binnen deze repository.</p>
+<ol style="list-style-type: decimal">
+<li><p>Zorg dat alle data zichtbaar zijn in de view van QGIS</p></li>
+<li><p>Selecteer ‘Kaartlagen’ <span class="math inline">\(\rightarrow\)</span> ‘Opslaan als …’</p>
+<ul>
+<li>Gebruik als ‘Indeling’ <code>GeoPackage</code></li>
+<li>Gebruik als ‘Bestandsnaam’ <code>YYYYMMDD_qgis_export_sovon_wfs_JAAR</code>
+<ul>
+<li><code>YYYYMMDD</code> is de datum van export</li>
+<li><code>JAAR</code> is het jaar wanneer de data verzameld is (zie SQL-query)</li>
+<li>Sla het geojson-bestand op in de folder <code>mbag-mas/data/mas</code>.</li>
+</ul></li>
+<li>Gebruik als ‘CRS’ <code>EPSG:28992 - Amersfoort / RD New</code></li>
+<li>Klik op ‘OK’ (dit kan even duren)</li>
+</ul></li>
+<li><p>De finale export die je wilt gebruiken voor data preparatie en verdere analyses, sla je op in een folder met als naam <code>JAAR</code> onder <code>mbag-mas/source/targets/data_preparation/data</code>.
+Elke folder mag slechts 1 bestand hebben met de data van dat jaar.</p></li>
+</ol>
+
+</div>
+</div>
+<div id="veiligheid" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Veiligheid<a href="#veiligheid" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Niet van toepassing.</p>
+<!--
+Alle aandachtspunten in verband met veilig werken.
+-->
+
+</div>
+<div id="referenties" class="section level1 unnumbered hasAnchor">
+<h1>Referenties<a href="#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-github-repo-mas" class="csl-entry">
+Langeraert W., Cartuyvels E. &amp; Van Calster H. (2024). <span>MBAG - MAS (akkervogels)</span>. <a href="https://github.com/inbo/mbag-mas">https://github.com/inbo/mbag-mas</a>.
+</div>
+<div id="ref-github-repo-piloot" class="csl-entry">
+Langeraert W. &amp; Van Calster H. (2024). <span>MAS-pilootproject</span>. <a href="https://github.com/inbo/mas-piloot">https://github.com/inbo/mas-piloot</a>.
+</div>
+<div id="ref-MAS" class="csl-entry">
+<span>Meetnet Agrarische Soorten (MAS)</span> (s.d.). <a href="https://www.sovon.nl/tellen/telprojecten/meetnet-agrarische-soorten-mas" class="uri">https://www.sovon.nl/tellen/telprojecten/meetnet-agrarische-soorten-mas</a>.
+</div>
+<div id="ref-MBAG" class="csl-entry">
+<span>Meetnet Biodiversiteit in het Agrarisch Gebied (MBAG)</span> (s.d.). <a href="https://www.vlaanderen.be/inbo/meetnet-biodiversiteit-in-het-agrarisch-gebied-mbag/wat-is-mbag/" class="uri">https://www.vlaanderen.be/inbo/meetnet-biodiversiteit-in-het-agrarisch-gebied-mbag/wat-is-mbag/</a>.
+</div>
+<div id="ref-QGISSoftware" class="csl-entry">
+QGIS Development Team (2024). <span>QGIS Geographic Information System</span>. QGIS Association. <a href="https://www.qgis.org">https://www.qgis.org</a>.
+</div>
+</div>
+
+</div>
+
+
+
+
+</div>
+
+<p>&nbsp;</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-Licentie" style="border-width:0" src="css/img/cc-by.png" class = "cc"/></a>
+            </section>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["sop-039-nl_2024.07.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, "");
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+
+</html>
