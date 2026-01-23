@@ -1,0 +1,17 @@
+fig:afbeelding1
+tab:unnamed-chunk-2
+wijzigingen-t.o.v.-vorige-versies
+section
+afhankelijkheden
+onderwerp
+definities-en-afkortingen
+vereiste-competenties-en-opleidingen
+proces
+werkwijze
+openen-van-de-foto
+schaal-instellen
+threshold-instellen
+analyse-per-taxonomische-groep
+opslaan-van-resultaten
+herhalen
+veiligheid

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html  lang="nl-BE">
+
+<head>
+<meta name="protocol-title" content="Abundantie- en oppervlaktebepaling van groepsfoto’s met ongewervelden in ImageJ" />
+<meta name="protocol-subtitle" content="" />
+<meta name="protocol-code" content="sop-040-nl" />
+<meta name="protocol-version" content="2026.01" />
+<meta name="protocol-language" content="nl-BE" />
+<meta name="protocol-theme" content="" />
+<meta name="protocol-reviewer" content="true, true" />
+<meta name="protocol-file-manager" content="true" />
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Abundantie- en oppervlaktebepaling van groepsfoto’s met ongewervelden in ImageJ</title>
+  <meta name="description" content="Abundantie- en oppervlaktebepaling van groepsfoto’s met ongewervelden in ImageJ">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Abundantie- en oppervlaktebepaling van groepsfoto’s met ongewervelden in ImageJ" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Abundantie- en oppervlaktebepaling van groepsfoto’s met ongewervelden in ImageJ" />
+  
+  
+  
+
+
+
+<meta name="date" content="2026-01-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="css/inbo_rapport.css" type="text/css"/>
+
+<link rel="stylesheet" href="css/inbo_rapport.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="https://www.vlaanderen.be/inbo/home/"><img src="css/img/inbo-nl.jpg"></a></li>
+<li class="toc-logo"><a href="https://inbo.github.io/protocols/"><button class="btn"><i class="fa fa-home"></i> Protocols homepage</button></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#metadata"><i class="fa fa-check"></i>Metadata</a></li>
+<li class="chapter" data-level="1" data-path=""><a href="#wijzigingen-t.o.v.-vorige-versies"><i class="fa fa-check"></i><b>1</b> Wijzigingen t.o.v. vorige versies</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#section"><i class="fa fa-check"></i><b>1.1</b> 2026.01</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path=""><a href="#afhankelijkheden"><i class="fa fa-check"></i><b>2</b> Afhankelijkheden</a></li>
+<li class="chapter" data-level="3" data-path=""><a href="#onderwerp"><i class="fa fa-check"></i><b>3</b> Onderwerp</a></li>
+<li class="chapter" data-level="4" data-path=""><a href="#definities-en-afkortingen"><i class="fa fa-check"></i><b>4</b> Definities en afkortingen</a></li>
+<li class="chapter" data-level="5" data-path=""><a href="#vereiste-competenties-en-opleidingen"><i class="fa fa-check"></i><b>5</b> Vereiste competenties en opleidingen</a></li>
+<li class="chapter" data-level="6" data-path=""><a href="#proces"><i class="fa fa-check"></i><b>6</b> Proces</a></li>
+<li class="chapter" data-level="7" data-path=""><a href="#werkwijze"><i class="fa fa-check"></i><b>7</b> Werkwijze</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path=""><a href="#openen-van-de-foto"><i class="fa fa-check"></i><b>7.1</b> Openen van de foto</a></li>
+<li class="chapter" data-level="7.2" data-path=""><a href="#schaal-instellen"><i class="fa fa-check"></i><b>7.2</b> Schaal instellen</a></li>
+<li class="chapter" data-level="7.3" data-path=""><a href="#threshold-instellen"><i class="fa fa-check"></i><b>7.3</b> Threshold instellen</a></li>
+<li class="chapter" data-level="7.4" data-path=""><a href="#analyse-per-taxonomische-groep"><i class="fa fa-check"></i><b>7.4</b> Analyse per taxonomische groep</a></li>
+<li class="chapter" data-level="7.5" data-path=""><a href="#opslaan-van-resultaten"><i class="fa fa-check"></i><b>7.5</b> Opslaan van resultaten</a></li>
+<li class="chapter" data-level="7.6" data-path=""><a href="#herhalen"><i class="fa fa-check"></i><b>7.6</b> Herhalen</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path=""><a href="#veiligheid"><i class="fa fa-check"></i><b>8</b> Veiligheid</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#referenties"><i class="fa fa-check"></i>Referenties</a></li>
+<li class="appendix"><span><b>Bijlagen</b></span></li>
+<li class="divider"></li>
+<li class="cc"><a href="http://creativecommons.org/licenses/by/4.0/"><img src="css/img/cc-by.png"></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Abundantie- en oppervlaktebepaling van groepsfoto’s met ongewervelden in ImageJ</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+  <div id="header">
+    <h1 class="title">Abundantie- en oppervlaktebepaling van groepsfoto’s met ongewervelden in ImageJ</h1>
+        <h3 class="author">Anouk Ollevier
+          <a href="https://orcid.org/0000-0003-2758-4723">
+      <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" />
+      0000-0003-2758-4723
+      </a>
+        </h3>
+          <address class="author_afil">
+      Instituut voor Natuur- en Bosonderzoek (INBO)
+              <br><a class="author_email" href="mailto:#"><a href="mailto:anouk.ollevier@inbo.be" class="email">anouk.ollevier@inbo.be</a></a>
+            </address>
+            <p class="date"><em>2026-01-23</em></p>
+        <h4><a class="doi" href="https://doi.org/10.5281/zenodo.18349389">10.5281/zenodo.18349389</a></h4>
+    
+<!--
+Instructies bij opmaak van het protocol:
+
+Hieronder vind je de verschillende onderdelen van een protocol.
+In de bijhorende losse `Rmd` bestanden vind je een beschrijving wat er bij elk onderdeel vermeld moet worden.
+Het is in die bestanden dat je moet editeren.
+Niet alle onderdelen zijn altijd van toepassing.
+Laat in die gevallen de titels staan en vermeld expliciet "niet van toepassing".
+-->
+<div id="metadata" class="section level1 unnumbered hasAnchor">
+<h1>Metadata<a href="#metadata" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<table style="width:100%;">
+<colgroup>
+<col width="36%" />
+<col width="22%" />
+<col width="16%" />
+<col width="16%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">reviewers</th>
+<th align="left">documentbeheerder</th>
+<th align="left">protocolcode</th>
+<th align="left">versienummer</th>
+<th align="left">taal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Jan Van Uytvanck, Timon Boumon</td>
+<td align="left">Anouk Ollevier</td>
+<td align="left">sop-040-nl</td>
+<td align="left">2026.01</td>
+<td align="left">nl</td>
+</tr>
+</tbody>
+</table>
+<p>Controleer <a href="../standard-operating-procedures-sop.html" target="_blank">deze tabel</a> om te zien of een meer recente versie beschikbaar is.</p>
+
+</div>
+<div id="wijzigingen-t.o.v.-vorige-versies" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Wijzigingen t.o.v. vorige versies<a href="#wijzigingen-t.o.v.-vorige-versies" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="section" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> <a href="../2026.01/index.html">2026.01</a><a href="#section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Eerste versie van het protocol.</li>
+</ul>
+<!--
+Omschrijf hier welke wijzigingen er gebeurd zijn ten opzichte van de vorige versie. 
+Vermeld bij elk versienummer, de reden van de wijziging en - wanneer relevant - een beknopte beschrijving van de wijziging.
+Gesorteerd van recent naar oud. 
+
+## [2020.02](../2020.02/index.html)
+
+- Toevoeging van ontbrekende stap in het stappenplan
+- Verbetering van schrijffouten
+
+## [2020.01](../2020.01/index.html)
+
+- Eerste versie van het protocol
+-->
+
+</div>
+</div>
+<div id="afhankelijkheden" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Afhankelijkheden<a href="#afhankelijkheden" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Hier niets invullen.
+Indien er afhankelijkheden zijn deze invullen in de yaml sectie van `index.Rmd`
+-->
+<table style="width:93%;">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="12%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Protocolcode</th>
+<th align="left">Versienummer</th>
+<th align="left">params</th>
+<th align="left">Opgenomen als subprotocol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div id="onderwerp" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Onderwerp<a href="#onderwerp" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Doelstelling en toepassingsgebied
+Doelstelling: omschrijving in woorden waarvoor het protocol dient.
+Voorbeelden wat er met de gegevens kan gedaan worden.
+Probeer de doelstelling zo veel mogelijk generiek te beschrijven en vermijd projectspecifieke doelstellingen.
+Toepassingsgebied: bespreek hier onder welke condities het protocol kan gebruikt worden.
+-->
+<!-- description: start -->
+<p>Binnen het Procesbeheerproject [1] worden in elk subplot twee keer per jaar stalen van ongewervelden verzameld: één keer in mei-juni en één keer in augustus-september.
+In het labo worden de ongewervelden via triage uit het strooisel gescheiden en vervolgens per taxonomische groep gesorteerd.
+Met dit materiaal worden (a) groepsfoto’s gemaakt, waarop per taxonomische groep het aantal individuen en het oppervlak wordt bepaald in ImageJ (zie hiervoor deze SOP), en (b) de exemplaren gedetermineerd en ingevoerd in waarnemingen.be.
+<!-- description: end --></p>
+
+</div>
+<div id="definities-en-afkortingen" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Definities en afkortingen<a href="#definities-en-afkortingen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Definities van begrippen en afkortingen die noodzakelijk zijn om dit document te begrijpen en het protocol op een gepaste manier te kunnen uitvoeren.
+-->
+<p>N.v.t.</p>
+
+</div>
+<div id="vereiste-competenties-en-opleidingen" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Vereiste competenties en opleidingen<a href="#vereiste-competenties-en-opleidingen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Omschrijving van de basiskennis en vaardigheden, die de gebruiker van het protocol moet hebben om het protocol op een gepaste manier te kunnen uitvoeren.
+Eventueel kan er verwezen worden naar bepaalde opleidingen.
+-->
+<p>N.v.t.</p>
+
+</div>
+<div id="proces" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Proces<a href="#proces" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- schematische voorstelling van het proces
+gebruik bijvoorbeeld `draw.io` en exporteer als png
+of maak het schema met een R package zoals `visNetwork`
+-->
+<p>N.v.t.</p>
+
+</div>
+<div id="werkwijze" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Werkwijze<a href="#werkwijze" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Gedetailleerde omschrijving van alle stappen die doorlopen moeten worden om het protocol uit te voeren.
+Deze stappen staan schematisch weergegeven in het processchema.
+Subtitels gebruiken om elke stap te omschrijven.
+-->
+<div id="openen-van-de-foto" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Openen van de foto<a href="#openen-van-de-foto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Open ImageJ [2]</p>
+<p>Laad de groepsfoto in via File &gt; Open</p>
+<p>De groepsfoto’s bevinden zich in de map: G:\ Gedeelde drives\ Procesbeheer\ PB11_Plotbemonstering\ PB_Plot_Invertebraten\ FOTO_SubPlot_Invertebraten\ Groepsfoto</p>
+</div>
+<div id="schaal-instellen" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Schaal instellen<a href="#schaal-instellen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Gebruik de Straight line tool en trek een lijn tussen de twee aangeduide referentiepunten.
+In het labo werden de punten zo geplaatst dat ze op een afstand van 50 of 150 mm van elkaar liggen.
+Als de punten in een vierkant liggen, zijn beide zijden 150 mm lang.
+Als ze een balk vormen, dan is de korte zijde 50 mm en de lange zijde 150 mm.</p>
+<p>Klik vervolgens op Analyze &gt; Set Scale.
+De waarde in pixels verschijnt automatisch.
+Vul bij Known distance 5 of 15 in, afhankelijk van de werkelijke afstand, en noteer bij Unit of length “cm”.</p>
+<p>Klik op OK.</p>
+</div>
+<div id="threshold-instellen" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Threshold instellen<a href="#threshold-instellen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Klik op Image &gt; Adjust &gt; Color Threshold.</p>
+<p>Pas alleen de twee waarden onder Brightness aan: zet de eerste waarde op 0 en kies voor de tweede een waarde tussen 160 en 220.
+De bedoeling is dat de organismen duidelijk rood gemarkeerd zijn, zonder dat de achtergrond te sterk meekleurt.
+Een paar rode puntjes in de achtergrond zijn geen probleem, want die kunnen later worden uitgefilterd.</p>
+</div>
+<div id="analyse-per-taxonomische-groep" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Analyse per taxonomische groep<a href="#analyse-per-taxonomische-groep" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Groepeer en selecteer de organismen van één bepaalde taxonomische groep via de polygon tool.
+Trek een polygon rondom de groep.</p>
+<p>Klik op Analyze &gt; Analyze particles</p>
+<p>Om ervoor te zorgen dat de kleine rode spikkels op de achtergrond niet worden mee geanalyseerd stel je Size (cm^2) in op ‘0.015-Infinity’.
+Dit zorgt ervoor dat objecten kleiner dan 0.015 cm² er worden uit gefilterd.</p>
+<p>Kies bij Show voor Overlay Masks, zodat de geselecteerde organismen na de analyse zichtbaar en genummerd zijn.</p>
+<p>Klik op OK.<br />
+</p>
+
+<div class="figure"><span style="display:block;" id="fig:afbeelding1"></span>
+<img src="media/Afbeelding1.png" alt="Analyze Particles scherm" width="33%" />
+<p class="caption">
+Figuur 7.1: Analyze Particles scherm
+</p>
+</div>
+<p>Via Analyze Particles worden de objecten – hier dus de organismen – automatisch geteld en gemeten (o.a. oppervlakte) (zie figuur <a href="#fig:afbeelding1">7.1</a>).
+De resultaten verschijnen in twee vensters: Results, waarin de metingen per individueel object binnen de polygon worden weergegeven, en Summary, dat een samenvatting toont van alle metingen voor de geselecteerde groep.</p>
+</div>
+<div id="opslaan-van-resultaten" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Opslaan van resultaten<a href="#opslaan-van-resultaten" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sla zowel het bestand Summary als Results op.
+Gebruik daarbij een vaste naamgeving:</p>
+<p><em>foto-analyse-typeoutput-subplotcode-diergroep-datum(YYYY-MM-DD)</em></p>
+<p><em>Bijvoorbeeld: foto-analyse-summary-dwhp-03c-kevers-2022-06-01</em></p>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Tabel 7.1: </span>Overzicht naamgeving</caption>
+<colgroup>
+<col width="24%" />
+<col width="37%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Onderdeel</th>
+<th align="left">Omschrijving</th>
+<th align="left">Waarde</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">foto-analyse</td>
+<td align="left">Vast voorvoegsel, zodat alle
+bestanden van dezelfde analyse
+makkelijk terug te vinden
+zijn.</td>
+<td align="left">foto-analyse</td>
+</tr>
+<tr class="even">
+<td align="left">typeoutput</td>
+<td align="left">Geeft aan welk type bestand
+het is: summary of results.</td>
+<td align="left">summary</td>
+</tr>
+<tr class="odd">
+<td align="left">subplotcode</td>
+<td align="left">De code die verwijst naar de
+subplot.</td>
+<td align="left">dwhp-03c</td>
+</tr>
+<tr class="even">
+<td align="left">diergroep</td>
+<td align="left">De onderzochte diergroep.</td>
+<td align="left">kevers, wantsen, spinnen, …</td>
+</tr>
+<tr class="odd">
+<td align="left">datum (YYYY-MM-DD)</td>
+<td align="left">De datum van staalname (dus
+niet de datum van de analyse
+in ImageJ).</td>
+<td align="left">2022-06-01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="herhalen" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Herhalen<a href="#herhalen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Voer stap 4 en 5 opnieuw uit voor elke taxonomische groep die aanwezig is op de groepsfoto.
+Zorg ervoor dat alle resultaten op dezelfde manier benoemd en opgeslagen worden.</p>
+
+</div>
+</div>
+<div id="veiligheid" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Veiligheid<a href="#veiligheid" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--
+Alle aandachtspunten in verband met veilig werken.
+-->
+<p>N.v.t.</p>
+
+</div>
+<div id="referenties" class="section level1 unnumbered hasAnchor">
+<h1>Referenties<a href="#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>[1] Instituut voor Natuur- en Bosonderzoek.
+(z.d.).
+Doel.
+Procesbeheer INBO.
+<a href="https://sites.google.com/inbo.be/procesbeheer/doel" class="uri">https://sites.google.com/inbo.be/procesbeheer/doel</a></p>
+<p>[2] Schneider, C. A., Rasband, W. S., &amp; Eliceiri, K. W.
+(2012).
+NIH Image to ImageJ: 25 years of image analysis.
+Nature Methods, 9(7), 671–675.
+<a href="doi:10.1038/nmeth.2089" class="uri">doi:10.1038/nmeth.2089</a></p>
+
+</div>
+
+
+
+
+</div>
+
+<p>&nbsp;</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-Licentie" style="border-width:0" src="css/img/cc-by.png" class = "cc"/></a>
+            </section>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": [
+    "sop-040-nl_2026.01.pdf"
+  ],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+
+</body>
+
+</html>
